@@ -12,7 +12,7 @@ import pendulum
 
 @aql.transform(conn_id="snowflake_jeffletcher", task_id="fetch_cancelled_flight_data")
 def fetch_cancelled_flight_data_func():
-    return """select FL_DATE, OP_CARRIER, OP_CARRIER_FL_NUM, ORIGIN, DEST, CRS_DEP_TIME, CRS_ARR_TIME, CRS_ELAPSED_TIME, DISTANCE, CANCELLED from flight_data_2 where cancelled = 1 -- limit 20;"""
+    return """select FL_DATE, OP_CARRIER, OP_CARRIER_FL_NUM, ORIGIN, DEST, CRS_DEP_TIME, CRS_ARR_TIME, CRS_ELAPSED_TIME, DISTANCE, CANCELLED from flight_data_2 where cancelled = 1"""
 
 @aql.transform(conn_id="snowflake_jeffletcher", task_id="cancelled_flights_count")
 def cancelled_flights_count_func():

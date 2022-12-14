@@ -1,8 +1,6 @@
 from datetime import datetime
 from airflow import DAG
-from airflow.operators.dummy_operator import DummyOperator
-from airflow.operators.python_operator import PythonOperator
-from airflow.utils.task_group import TaskGroup
+from airflow.operators.python import PythonOperator
 
 args = {
     'depends_on_past': False,

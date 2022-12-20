@@ -91,8 +91,7 @@ def fetch_cancelled_flight_data_func():
 @aql.dataframe(task_id="cell_1")
 def cell_1_func():
     import os
-    import json
-    print(json.dumps(dict(os.environ),indent=4))
+    print(os.environ["AIRFLOW__CORE__ENABLE_XCOM_PICKLING"])
 
 @aql.transform(conn_id="snowflake_jeffletcher", task_id="cancelled_flights_count")
 def cancelled_flights_count_func():

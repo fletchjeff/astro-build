@@ -147,7 +147,7 @@ def evaluate_model_func(train_model: pd.DataFrame):
     return test_score
 
 @dag(
-    schedule_interval="0 0 * * MON",
+    schedule_interval=None,
     start_date=pendulum.from_format("2022-11-02", "YYYY-MM-DD").in_tz("Europe/Amsterdam"),
 )
 def fetch_flight_files():
